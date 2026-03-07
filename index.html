@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Man Cargo — AI Freight Brokerage</title>
+  <meta name="description" content="100% AI-operated freight brokerage. No humans. No broker fees. Instant quotes. Save 15-30%." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: #60a5fa; }
+    .nav-badge {
+      font-size: 12px;
+      background: rgba(96,165,250,0.15);
+      color: #93c5fd;
+      border: 1px solid rgba(96,165,250,0.3);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 100px 24px 80px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      margin-bottom: 24px;
+    }
+    h1 em {
+      font-style: normal;
+      color: #60a5fa;
+    }
+    .subheadline {
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .subheadline strong { color: var(--white); font-weight: 600; }
+
+    /* EMAIL FORM */
+    .email-form {
+      display: flex;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .email-form input {
+      flex: 1;
+      min-width: 240px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      color: var(--white);
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .email-form input:focus { border-color: #60a5fa; }
+    .email-form button {
+      padding: 16px 28px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .email-form button:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .form-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+    .form-note strong { color: rgba(255,255,255,0.7); }
+
+    /* PROOF POINTS */
+    .proof {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 60px 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+    }
+    .proof-icon {
+      font-size: 22px;
+    }
+    .proof-text strong { display: block; font-weight: 600; color: white; }
+    .proof-text span { color: rgba(255,255,255,0.5); font-size: 13px; }
+
+    /* HOW IT WORKS */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 16px;
+    }
+    .section h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 48px;
+      line-height: 1.15;
+    }
+
+    .steps {
+      display: grid;
+      gap: 20px;
+    }
+    .step {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .step-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #60a5fa;
+      background: rgba(96,165,250,0.1);
+      border: 1px solid rgba(96,165,250,0.2);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .step-content strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .step-content p { color: rgba(255,255,255,0.55); font-size: 15px; }
+
+    /* FAQ */
+    .faq {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .faq h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 32px;
+    }
+    .faq-item {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0;
+    }
+    .faq-q {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .faq-a {
+      color: rgba(255,255,255,0.55);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* CTA BOTTOM */
+    .cta-bottom {
+      background: rgba(37,99,235,0.12);
+      border-top: 1px solid rgba(37,99,235,0.25);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-bottom h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .cta-bottom p {
+      color: rgba(255,255,255,0.55);
+      font-size: 17px;
+      margin-bottom: 36px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* SUCCESS STATE */
+    .success-msg {
+      display: none;
+      color: #4ade80;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 16px;
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.2);
+      border-radius: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">One Man <span>Cargo</span></div>
+    <div class="nav-badge">Launching 2026 · Waitlist Open</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">AI-Operated Freight Brokerage</div>
+    <h1>The freight broker<br/>with <em>no broker.</em></h1>
+    <p class="subheadline">
+      <strong>100% AI-operated. No humans. No broker fees.</strong><br/>
+      Instant quotes. Pay upfront like Uber. Save 15–30%.
+    </p>
+
+    <div class="email-form" id="form-container">
+      <input type="email" id="email-input" placeholder="your@company.com" />
+      <button onclick="handleSubmit()">Get Early Access</button>
+    </div>
+    <div class="success-msg" id="success-msg">
+      ✓ You're on the list! Founding members get our lowest rate, locked in forever.
+    </div>
+    <p class="form-note"><strong>Join the waitlist</strong> — founding members get our lowest rate, locked in forever.</p>
+  </section>
+
+  <!-- PROOF POINTS -->
+  <div class="proof">
+    <div class="proof-item">
+      <span class="proof-icon">⚡</span>
+      <div class="proof-text">
+        <strong>Quote in 60 seconds</strong>
+        <span>Not tomorrow morning</span>
+      </div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon">💰</span>
+      <div class="proof-text">
+        <strong>No human broker</strong>
+        <span>Lower rate, every time</span>
+      </div>
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon">🛡️</span>
+      <div class="proof-text">
+        <strong>FMCSA licensed</strong>
+        <span>$75K bonded, carrier insured</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="section-label">How It Works</div>
+    <h2>Book freight like ordering an Uber.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <strong>Tell us your shipment</strong>
+          <p>Origin, destination, pallets, weight. 4 fields. No account needed. Takes 60 seconds.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <strong>Get an instant quote</strong>
+          <p>Our AI pulls live rates from the market in real time. No waiting. No callbacks. Price appears on the same page.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <strong>Pay and confirm</strong>
+          <p>Pay upfront via card — like Uber. That's why our rates beat traditional brokers. BOL generated automatically on payment.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <strong>We handle everything else</strong>
+          <p>Carrier confirmed in under 30 minutes. Real-time tracking via WhatsApp or SMS. No humans in the loop — that's the point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Questions.</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Is this actually AI? No humans at all?</div>
+      <div class="faq-a">Correct. That is how we keep costs lower than any broker you have used before. There are no humans handling your shipment — and we're proud of it. We tell you upfront because it's our greatest competitive advantage.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if something goes wrong?</div>
+      <div class="faq-a">5 guarantees protect every shipment. Full refund if no carrier confirmed within 2 hours. Every dispute is reviewed personally by the owner. Carrier insurance minimum $1M auto + $100K cargo on every load.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What do you move?</div>
+      <div class="faq-a">Launching with domestic truck freight — LTL (1–12 pallets) and FTL (13+ pallets). Rail, ocean, and air coming based on demand. Tell us what you need on signup — it shapes what we build next.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Why pay upfront?</div>
+      <div class="faq-a">It's how we eliminate the overhead that traditional brokers use to justify their margins. No credit risk, no collections, no net-30 games. You pay, we dispatch. Simple. Founding members who join the waitlist get Net-30 terms after 10 loads — locked in forever.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Who is this for?</div>
+      <div class="faq-a">Small businesses in the USA that ship freight regularly — retailers, e-commerce brands, distributors, manufacturers, importers. If you're currently using a traditional broker or calling carriers directly, we'll save you money on every load.</div>
+    </div>
+  </div>
+
+  <!-- CTA BOTTOM -->
+  <div class="cta-bottom">
+    <h2>Ready to ship cheaper?</h2>
+    <p>Join the waitlist. Founding members get our lowest rate, locked in forever.</p>
+    <div class="email-form" style="justify-content:center;">
+      <input type="email" id="email-input-2" placeholder="your@company.com" />
+      <button onclick="handleSubmit2()">Get Early Access</button>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 One Man Cargo AI · onemancargo.ai</div>
+    <div>FMCSA Licensed · US Freight Broker · Powered entirely by AI</div>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const email = document.getElementById('email-input').value;
+      if (!email || !email.includes('@')) {
+        document.getElementById('email-input').style.borderColor = '#ef4444';
+        return;
+      }
+      // TODO: Connect to Loops.so or Mailchimp API
+      console.log('Waitlist signup:', email);
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+      
+      // Mailchimp/Loops integration point
+      fetch('YOUR_LOOPS_OR_MAILCHIMP_ENDPOINT', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'landing-hero' })
+      }).catch(() => {}); // silent fail for now
+    }
+
+    function handleSubmit2() {
+      const email = document.getElementById('email-input-2').value;
+      if (!email || !email.includes('@')) return;
+      console.log('Waitlist signup (bottom):', email);
+      document.getElementById('email-input-2').value = '';
+      document.getElementById('email-input-2').placeholder = '✓ You\'re on the list!';
+    }
+  </script>
+</body>
+</html>
