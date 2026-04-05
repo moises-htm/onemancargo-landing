@@ -134,6 +134,88 @@
     }
     .form-note strong { color: rgba(255,255,255,0.7); }
 
+    /* WHATSAPP BUTTON */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: 12px;
+      color: #25d366;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 20px;
+    }
+    .whatsapp-btn:hover { background: rgba(37,211,102,0.2); transform: translateY(-1px); }
+    .whatsapp-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* PHONE LEAD CAPTURE */
+    .phone-capture {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 480px;
+      margin: 32px auto 0;
+    }
+    .phone-capture h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .phone-capture .sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+    .phone-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .phone-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      color: var(--white);
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .phone-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .phone-form input:focus { border-color: #60a5fa; }
+    .phone-form button {
+      padding: 14px 22px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .phone-form button:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .phone-success {
+      display: none;
+      color: #4ade80;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
     /* PROOF POINTS */
     .proof {
       display: flex;
@@ -285,123 +367,6 @@
       max-width: 480px;
       margin: 0 auto;
     }
-
-    /* HERO CTA ALT */
-    .cta-or {
-      display: block;
-      font-size: 13px;
-      color: rgba(255,255,255,0.3);
-      margin: 20px 0 16px;
-      letter-spacing: 0.05em;
-    }
-    .hero-action-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 24px;
-      background: #25d366;
-      color: #fff;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .whatsapp-btn:hover { background: #1ebe5a; transform: translateY(-1px); }
-    .sms-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 24px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.75);
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .sms-btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
-
-    /* LEAD CAPTURE */
-    .lead-capture {
-      padding: 0 24px 60px;
-    }
-    .lead-capture-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(37,99,235,0.08);
-      border: 1px solid rgba(37,99,235,0.25);
-      border-radius: 20px;
-      padding: 36px 40px;
-      text-align: center;
-    }
-    .lead-capture-headline {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-    .lead-capture-sub {
-      font-size: 14px;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 24px;
-    }
-    .lead-capture-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .lead-capture-row input[type="tel"] {
-      flex: 1;
-      min-width: 200px;
-      max-width: 280px;
-      padding: 14px 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 12px;
-      color: var(--white);
-      font-size: 15px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .lead-capture-row input[type="tel"]::placeholder { color: rgba(255,255,255,0.3); }
-    .lead-capture-row input[type="tel"]:focus { border-color: var(--blue); }
-    .lead-capture-row button {
-      padding: 14px 24px;
-      background: var(--blue);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      white-space: nowrap;
-    }
-    .lead-capture-row button:hover { background: var(--blue-dark); transform: translateY(-1px); }
-    .lead-capture-success {
-      display: none;
-      color: #4ade80;
-      font-size: 15px;
-      font-weight: 500;
-      margin-top: 16px;
-    }
-    @media (max-width: 520px) {
-      .lead-capture-row { flex-direction: column; align-items: stretch; }
-      .lead-capture-row input[type="tel"] { max-width: 100%; }
-      .lead-capture-box { padding: 28px 20px; }
-    }
   </style>
 </head>
 <body>
@@ -429,30 +394,32 @@
     </div>
     <p class="form-note"><strong>Join the waitlist</strong> — founding members get our lowest rate, locked in forever.</p>
 
-    <span class="cta-or">— or get a quote right now —</span>
-    <div class="hero-action-btns">
-      <a href="https://wa.me/18773115753?text=Hi%2C%20I%20need%20a%20freight%20quote.%20Pickup%3A%20%5Bcity%5D.%20Delivery%3A%20%5Bcity%5D.%20Pallets%3A%20___.%20Weight%3A%20___lbs" class="whatsapp-btn" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Us
-      </a>
-      <a href="sms:+18773115753?body=Hi%2C%20I%20need%20a%20freight%20quote.%20Pickup%3A%20%5Bcity%5D.%20Delivery%3A%20%5Bcity%5D.%20Pallets%3A%20___.%20Weight%3A%20___lbs" class="sms-btn">
-        💬 Text Us
-      </a>
+    <!-- WhatsApp CTA -->
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/18773115753?text=Hi%2C%20I%20need%20a%20freight%20quote.%20Pickup%3A%20%5Bcity%5D.%20Delivery%3A%20%5Bcity%5D.%20Pallets%3A%20___.%20Weight%3A%20___lbs"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp Us
+    </a>
+
+    <!-- Phone Lead Capture -->
+    <div class="phone-capture">
+      <h3>Get a quote over the phone</h3>
+      <p class="sub">We'll call you — leave your number below. / Te llamamos — deja tu número.</p>
+      <div class="phone-form" id="phone-form-container">
+        <input type="tel" id="phone-input" placeholder="+1 (555) 000-0000" />
+        <button onclick="handlePhoneSubmit()">Call Me / Llámame</button>
+      </div>
+      <div class="phone-success" id="phone-success">
+        ✓ Got it — we'll call you shortly. / Recibido, te llamamos pronto.
+      </div>
     </div>
   </section>
-
-  <!-- PHONE LEAD CAPTURE -->
-  <div class="lead-capture">
-    <div class="lead-capture-box">
-      <div class="lead-capture-headline">Not ready to quote yet? Leave your number — we'll text you when we launch with the best freight rates.</div>
-      <div class="lead-capture-sub">¿Aún no listo? Déjanos tu número y te avisamos cuando lancemos con las mejores tarifas.</div>
-      <div class="lead-capture-row">
-        <input type="tel" id="lead-phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
-        <button onclick="handlePhoneSubmit()">Notify Me</button>
-      </div>
-      <div class="lead-capture-success" id="lead-success">Got it! We'll text you soon. / ¡Listo! Te avisamos pronto.</div>
-    </div>
-  </div>
 
   <!-- PROOF POINTS -->
   <div class="proof">
@@ -549,10 +516,22 @@
   <div class="cta-bottom">
     <h2>Ready to ship cheaper?</h2>
     <p>Join the waitlist. Founding members get our lowest rate, locked in forever.</p>
-    <div class="email-form" style="justify-content:center;">
+    <div class="email-form" style="justify-content:center; margin-bottom: 16px;">
       <input type="email" id="email-input-2" placeholder="your@company.com" />
       <button onclick="handleSubmit2()">Get Early Access</button>
     </div>
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/18773115753?text=Hi%2C%20I%20need%20a%20freight%20quote.%20Pickup%3A%20%5Bcity%5D.%20Delivery%3A%20%5Bcity%5D.%20Pallets%3A%20___.%20Weight%3A%20___lbs"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="display: inline-flex; margin: 0 auto;"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp Us
+    </a>
   </div>
 
   <footer>
@@ -561,44 +540,51 @@
   </footer>
 
   <script>
+    const LOOPS_ENDPOINT = 'https://app.loops.so/api/newsletter-form/cm9xxxxxxxxxxxxxxxx'; // TODO: replace with real form ID
+
     function handleSubmit() {
       const email = document.getElementById('email-input').value;
       if (!email || !email.includes('@')) {
         document.getElementById('email-input').style.borderColor = '#ef4444';
         return;
       }
-      // TODO: Connect to Loops.so or Mailchimp API
-      console.log('Waitlist signup:', email);
       document.getElementById('form-container').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
-      
-      // Mailchimp/Loops integration point
-      fetch('YOUR_LOOPS_OR_MAILCHIMP_ENDPOINT', {
+
+      fetch(LOOPS_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, source: 'landing-hero' })
-      }).catch(() => {}); // silent fail for now
+      }).catch(() => {});
     }
 
     function handleSubmit2() {
       const email = document.getElementById('email-input-2').value;
       if (!email || !email.includes('@')) return;
-      console.log('Waitlist signup (bottom):', email);
       document.getElementById('email-input-2').value = '';
       document.getElementById('email-input-2').placeholder = '✓ You\'re on the list!';
+
+      fetch(LOOPS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'landing-bottom' })
+      }).catch(() => {});
     }
 
     function handlePhoneSubmit() {
-      const phone = document.getElementById('lead-phone').value.trim();
+      const phone = document.getElementById('phone-input').value.trim();
       if (!phone || phone.length < 7) {
-        document.getElementById('lead-phone').style.borderColor = '#ef4444';
+        document.getElementById('phone-input').style.borderColor = '#ef4444';
         return;
       }
-      console.log('Phone lead capture:', phone);
-      document.getElementById('lead-phone').style.display = 'none';
-      document.querySelector('.lead-capture-row button').style.display = 'none';
-      document.getElementById('lead-success').style.display = 'block';
-      // TODO: connect to CRM/SMS platform
+      document.getElementById('phone-form-container').style.display = 'none';
+      document.getElementById('phone-success').style.display = 'block';
+
+      fetch(LOOPS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone, source: 'landing-phone' })
+      }).catch(() => {});
     }
   </script>
 </body>
