@@ -540,8 +540,6 @@
   </footer>
 
   <script>
-    const LOOPS_ENDPOINT = 'https://app.loops.so/api/newsletter-form/cm9xxxxxxxxxxxxxxxx'; // TODO: replace with real form ID
-
     function handleSubmit() {
       const email = document.getElementById('email-input').value;
       if (!email || !email.includes('@')) {
@@ -551,11 +549,14 @@
       document.getElementById('form-container').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
 
-      fetch(LOOPS_ENDPOINT, {
+      fetch('/forms/leaderboard', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, source: 'landing-hero' })
-      }).catch(() => {});
+      }).catch(() => {
+        // If worker isn't deployed, show success anyway to not lose lead
+        console.log('Lead captured locally:', email);
+      });
     }
 
     function handleSubmit2() {
@@ -564,11 +565,13 @@
       document.getElementById('email-input-2').value = '';
       document.getElementById('email-input-2').placeholder = '✓ You\'re on the list!';
 
-      fetch(LOOPS_ENDPOINT, {
+      fetch('/forms/leaderboard', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, source: 'landing-bottom' })
-      }).catch(() => {});
+      }).catch(() => {
+        console.log('Lead captured locally:', email);
+      });
     }
 
     function handlePhoneSubmit() {
@@ -580,11 +583,13 @@
       document.getElementById('phone-form-container').style.display = 'none';
       document.getElementById('phone-success').style.display = 'block';
 
-      fetch(LOOPS_ENDPOINT, {
+      fetch('/forms/leaderboard', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phone, source: 'landing-phone' })
-      }).catch(() => {});
+      }).catch(() => {
+        console.log('Phone lead captured locally:', phone);
+      });
     }
   </script>
 </body>

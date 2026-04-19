@@ -1,0 +1,5 @@
+{
+  "functions": {
+    "includes": ["forms/*.js"]
+  }
+}
